@@ -1,11 +1,18 @@
 // Task.js
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import EditTask from './EditTask'; 
 
 const Task = ({ task }) => {
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
+  const [updatedDescription, setUpdatedDescription] = useState(task.description);
+  const descriptionRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      // Cleanup if needed
+    };
+  }, []);
 
   const handleToggleTask = () => {
     dispatch({ type: 'TOGGLE_TASK', payload: task.id });
@@ -13,10 +20,21 @@ const Task = ({ task }) => {
 
   const handleStartEditing = () => {
     setIsEditing(true);
+    setUpdatedDescription(task.description);
   };
 
-  const handleCancelEditing = () => {
+  const handleSaveChanges = () => {
+    dispatch({
+      type: 'EDIT_TASK',
+      payload: { id: task.id, description: updatedDescription },
+    });
     setIsEditing(false);
+  };
+
+  const handleDescriptionChange = () => {
+    if (descriptionRef.current) {
+      setUpdatedDescription(descriptionRef.current.innerHTML);
+    }
   };
 
   return (
@@ -26,16 +44,22 @@ const Task = ({ task }) => {
         checked={task.isDone}
         onChange={handleToggleTask}
       />
-      {isEditing ? (
-        <EditTask task={task} onCancel={handleCancelEditing} />
-      ) : (
-        <span
-          style={{ textDecoration: task.isDone ? 'line-through' : 'none' }}
-          onClick={handleStartEditing}
-        >
-          {task.description}
-        </span>
-      )}
+      <div
+        contentEditable={isEditing}
+        style={{
+          textDecoration: task.isDone ? 'line-through' : 'none',
+          border: isEditing ? '1px solid black' : 'none',
+          padding: isEditing ? '2px' : '0',
+          display: 'inline-block',
+        }}
+        ref={descriptionRef}
+        onClick={handleStartEditing}
+        onBlur={handleSaveChanges}
+        onInput={handleDescriptionChange}
+        dangerouslySetInnerHTML={{ __html: task.description }}
+      />
+      {!isEditing && <button onClick={handleStartEditing}>Edit</button>}
+      {isEditing && <button onClick={handleSaveChanges}>Save Changes</button>}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 const initialState = {
   tasks: [],
-  filter: 'all', // 'all', 'done', 'notDone'
+  filter: 'all',
 };
 
 const tasksReducer = (state = initialState, action) => {

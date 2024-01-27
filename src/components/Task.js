@@ -1,12 +1,22 @@
 // Task.js
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import EditTask from './EditTask'; 
 
 const Task = ({ task }) => {
   const dispatch = useDispatch();
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleToggleTask = () => {
     dispatch({ type: 'TOGGLE_TASK', payload: task.id });
+  };
+
+  const handleStartEditing = () => {
+    setIsEditing(true);
+  };
+
+  const handleCancelEditing = () => {
+    setIsEditing(false);
   };
 
   return (
@@ -16,9 +26,16 @@ const Task = ({ task }) => {
         checked={task.isDone}
         onChange={handleToggleTask}
       />
-      <span style={{ textDecoration: task.isDone ? 'line-through' : 'none' }}>
-        {task.description}
-      </span>
+      {isEditing ? (
+        <EditTask task={task} onCancel={handleCancelEditing} />
+      ) : (
+        <span
+          style={{ textDecoration: task.isDone ? 'line-through' : 'none' }}
+          onClick={handleStartEditing}
+        >
+          {task.description}
+        </span>
+      )}
     </div>
   );
 };

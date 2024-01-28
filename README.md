@@ -1,6 +1,11 @@
-# React Todo App
+# React Todo List App
 
-A simple React Todo App with the ability to add, filter, edit and delete tasks.
+A simple React TodoList  App with the ability to add, filter, edit and delete tasks.
+
+## Project Structure
+![pjs](https://github.com/elamuhombe/gomycode-redux-checkpoint/assets/10416177/589a2754-3342-4505-9610-6a9c71f1b2e8)
+
+
 
 ## Getting Started
 

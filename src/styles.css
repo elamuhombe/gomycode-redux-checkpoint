@@ -1,0 +1,87 @@
+/* Reset default styles */
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box; /* Include padding and border in total width/height */
+}
+
+/* Style task container */
+.task-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Add space at the top */
+}
+
+/* Style title */
+.todo-title{
+    font-weight: 900;
+    color: blueviolet;
+    margin-bottom: 25px; /* Add space at the bottom */
+}
+
+/* Style Add Task */
+.add-task{
+    display: flex;
+    flex-direction: row;
+    gap: 15px; /* Add space between child elements */
+}
+
+/* Style Add Task input */
+.add-task input{
+    width: 300px;
+    max-width: 550px; /* Set maximum width */
+    padding-left: 10px;
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+
+/* Style Add Task button */
+.btn-add-task{
+    padding: 10px 32px;
+    background-color: #FFA500; /* Set button background color */
+    border: 1px solid #FFA500;
+    border-radius: 15px;
+}
+
+/* Style Add button text */
+.btn-add-task-text{
+    font-size: 16px;
+}
+
+/* Style Filter Task */
+.filter-task{
+    margin: 10px auto;
+}
+/* Style Task List(s) */
+.task-list {
+    margin-top: 50px; /* Add space at the top */
+    margin-inline: 15px; /* Add space at the sides */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style Task Item */
+.task-list .task-item {
+    padding: 20px;
+    margin-bottom: 25px; /* Adjust the gap between items */
+    background-color: aliceblue;
+}
+
+/* Adjust space between checkbox and task text */
+.task-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Style Task Text */
+.task-item .task-text {
+    flex-grow: 1; /* Allow task text to take remaining space */
+    margin-right: 10px; /* Add space to the right */
+}
+
+/* Adjust space between task text and edit button */
+.task-item button {
+    margin-left: 10px; /* Add space to the left */
+}

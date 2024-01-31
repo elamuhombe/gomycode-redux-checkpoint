@@ -36,10 +36,32 @@ A component to edit the task
 ### Task
 A component representing an individual task with options to mark as done and delete. It also contains edit and delete buttons.
 
+## Screenshot
+
 ## Usage
 - Use the AddTask component to add new tasks.
 - Use the ListTask component to view and filter tasks.
 - Use the Task component to interact with individual tasks.
 Feel free to customize and extend the functionality based on your requirements.
+
+## Dependencies
+
+- React: The core library for building user interfaces in React applications.
+- Redux: A predictable state container for JavaScript apps.
+- React-Redux: The official React bindings for Redux
+- Redux-Thunk: Middleware that allows you to write action creators that return a function instead of an action
+
+## Contributing
+Feel free to contribute to the project. Fork the repository, make your changes, and submit a pull request.
+
+## Author
+The project is created by Elaine Muhombe.
+
+## Acknowledgements
+- React website:(https://react.dev/)
+- Redux website: [[//https://redux.js.org/](https://redux.js.org/)](https://redux.js.org/)
+- React icons website: https://react-icons.github.io/react-icons/
+- Free Code Camp website: https://www.freecodecamp.org/news/redux-and-redux-toolkit-for-beginners/
+
 
 

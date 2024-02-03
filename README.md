@@ -37,6 +37,8 @@ A component to edit the task
 A component representing an individual task with options to mark as done and delete. It also contains edit and delete buttons.
 
 ## Screenshot
+![todo](https://github.com/elamuhombe/gomycode-redux-checkpoint/assets/10416177/92af4d41-8a65-4d00-8c00-21f66ba9487a)
+
 
 ## Usage
 - Use the AddTask component to add new tasks.

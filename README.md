@@ -39,6 +39,8 @@ A component representing an individual task with options to mark as done and del
 ## Screenshot
 ![todo](https://github.com/elamuhombe/gomycode-redux-checkpoint/assets/10416177/92af4d41-8a65-4d00-8c00-21f66ba9487a)
 
+### Completed tasks
+![done](https://github.com/elamuhombe/gomycode-redux-checkpoint/assets/10416177/a81ed86e-de86-412d-9f9e-92a8e6484810)
 
 ## Usage
 - Use the AddTask component to add new tasks.
